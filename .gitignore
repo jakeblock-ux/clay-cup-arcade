@@ -1,0 +1,10 @@
+# Hosting/account configuration and local-only files
+.openai/
+.env
+.env.*
+!.env.example
+.DS_Store
+node_modules/
+*.log
+work/
+.sites-runtime/

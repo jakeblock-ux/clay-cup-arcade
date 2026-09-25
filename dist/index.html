@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clay Cup — Choose Your Fighter</title>
+<meta name="theme-color" content="#100a10">
+<meta name="description" content="Leszek. Sabrina. Avik. Ben. Secret bosses. Unlockable hosts. One Clay Cup. An arcade fighting game on the SCULPT stage.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d0916'/%3E%3Cpath d='M9 5h14v12l-7 6-7-6zM14 22h4v4h6v3H8v-3h6M9 8H4v7l5 3m14-10h5v7l-5 3' fill='%23faff00' stroke='%23ff7700' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=8"><script src="chiptune.js" defer></script><script src="game.js?v=9" defer></script>
+</head>
+<body>
+<main class="arcade">
+<header class="topbar"><a href="./" class="wordmark" aria-label="Clay Cup home">CLAY<span> CUP</span><i>ARCADE</i></a><div class="utilities"><button id="help-button" class="utility" aria-label="View controls">? <span>CONTROLS</span></button><button id="sound-button" class="utility" aria-label="Turn sound off" aria-pressed="true">♪ <span>SOUND ON</span></button><button id="fullscreen-button" class="utility" aria-label="Toggle fullscreen">⛶</button></div></header>
+<section id="selection" class="select-screen" aria-labelledby="choose-title">
+<div class="screen-heading"><span class="speed-stripes" aria-hidden="true"></span><h1 id="choose-title">CHOOSE YOUR FIGHTER</h1><span class="speed-stripes reverse" aria-hidden="true"></span></div>
+<div class="roster-frame"><div id="roster" class="roster" role="group" aria-label="Fighters"></div></div>
+<div class="selection-bottom">
+<div class="fighter-preview"><canvas id="preview" width="440" height="470" aria-label="Selected fighter sprite"></canvas><div class="nameplate"><strong id="fighter-name">SABRINA</strong><span id="fighter-region">AMERICAS</span></div></div>
+<div class="cup-panel"><div class="cup-heading"><span>YOUR ROAD TO THE</span><h2>CLAY CUP</h2></div><div class="trophies" aria-label="Defeat every competitor, then win the secret final"><div><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#trophy"/></svg><span>QUARTERFINAL</span></div><div><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#trophy"/></svg><span>SEMIFINAL</span></div><div><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#trophy"/></svg><span>THE FINAL</span></div></div><div class="fighter-info"><div><span class="eyebrow" id="fighter-type">THE ALL-ROUNDER</span><p id="fighter-special">Special: Pipeline Pulse</p></div><div class="stats" id="fighter-stats"></div></div></div>
+</div>
+<div class="hosts-section"><p id="host-status">TWO HOSTS. ONE SECRET.</p><div id="host-roster" class="host-roster" role="group" aria-label="Unlockable hosts"></div></div>
+<div class="selection-actions"><span class="selection-hint"><kbd>←</kbd><kbd>→</kbd> CHOOSE <img class="cup-separator" src="assets/cup-separator.png" width="20" height="20" alt="" aria-hidden="true"> <kbd>ENTER</kbd> CONFIRM</span><button class="primary" id="start-button">LET’S FIGHT <span>▶</span></button></div>
+</section>
+<div class="match-layout">
+<section id="arena" class="arena hidden" aria-label="Clay Cup match">
+<canvas id="game" width="1280" height="720" aria-label="Fighting game. Use A and D to move, W to jump, S to block, J to punch, K to kick, L for special."></canvas>
+<div class="hud"><div class="fighter-hud"><div class="hud-name"><span id="p-name">SABRINA</span><small>1P</small></div><div class="health"><i id="p-health"></i></div><div class="hud-sub"><span id="p-rounds">○ ○</span><div class="energy"><i id="p-energy"></i></div></div></div><div class="timer"><span id="timer">60</span><small id="match-label">MATCH 1 / 3</small></div><div class="fighter-hud opponent"><div class="hud-name"><small>CPU</small><span id="cpu-name">LESZEK</span></div><div class="health"><i id="cpu-health"></i></div><div class="hud-sub"><div class="energy"><i id="cpu-energy"></i></div><span id="cpu-rounds">○ ○</span></div></div></div>
+<div class="stage-tag">SCULPT ARENA <img class="cup-separator" src="assets/cup-separator.png" width="20" height="20" alt="" aria-hidden="true"> CLAY CUP</div>
+<button id="pause-button" class="pause-button" aria-label="Pause game">Ⅱ</button>
+<div id="announcement" class="announcement hidden" aria-live="polite"></div>
+<div id="boss-cue" class="boss-cue hidden" aria-live="polite"></div>
+<div id="boss-alert" class="boss-alert hidden" role="status"><span id="boss-alert-kicker" class="eyebrow"></span><h2 id="boss-alert-title"></h2><p id="boss-alert-copy"></p><span class="boss-alert-rule">SECRET FINAL</span></div>
+<div id="versus" class="versus hidden"><div class="versus-top"><span id="versus-round">QUARTERFINAL</span><p>SCULPT ARENA</p></div><div class="versus-fighters"><div><div class="vs-portrait" id="vs-player"></div><h2 id="vs-player-name"></h2><span>PLAYER 1</span></div><b>VS</b><div><div class="vs-portrait" id="vs-cpu"></div><h2 id="vs-cpu-name"></h2><span>CHALLENGER</span></div></div><p class="versus-foot">BEST OF THREE ROUNDS <img class="cup-separator" src="assets/cup-separator.png" width="20" height="20" alt="" aria-hidden="true"> 60 SECONDS</p></div>
+<div id="result" class="result hidden"><span id="result-kicker" class="eyebrow"></span><svg id="result-trophy" viewBox="0 0 64 64"><use href="#trophy"/></svg><h2 id="result-title"></h2><p id="result-copy"></p><div id="unlock-reveal" class="unlock-reveal hidden"><div id="unlock-faces"></div><small id="unlock-save"></small></div><div id="result-progress" class="result-progress"></div><button id="continue-button" class="primary"></button><button id="reselect-button" class="text-button">CHOOSE ANOTHER FIGHTER</button></div>
+<div id="pause" class="pause-overlay hidden"><span class="eyebrow">TAKE A BREATHER</span><h2>PAUSED</h2><button id="resume-button" class="primary">BACK TO THE FIGHT</button><button id="quit-button" class="text-button">RETURN TO FIGHTER SELECT</button></div>
+</section>
+<div id="battle-controls" class="battle-controls hidden"><div class="keyboard-controls"><span><kbd>A</kbd><kbd>D</kbd> MOVE</span><span><kbd>W</kbd> JUMP</span><span><kbd>S</kbd> BLOCK</span><span><kbd>J</kbd> PUNCH</span><span><kbd>K</kbd> KICK</span><span><kbd>L</kbd> SPECIAL</span></div><div class="touch-controls" aria-label="Touch game controls"><div class="dpad" role="group" aria-label="Movement"><button data-key="a" aria-label="Move left">◀</button><button data-key="w" aria-label="Jump"><span>▲</span><small>JUMP</small></button><button data-key="d" aria-label="Move right">▶</button><button data-key="s" aria-label="Hold to block">BLOCK</button></div><div class="attack-pad" role="group" aria-label="Attacks"><button data-key="j" aria-label="Punch">JAB</button><button data-key="k" aria-label="Kick">KICK</button><button data-key="l" aria-label="Special attack, costs 40 energy"><span>SPECIAL</span><small id="touch-energy">60%</small></button></div></div><p class="touch-hint">HOLD TO MOVE OR ATTACK <img class="cup-separator" src="assets/cup-separator.png" width="20" height="20" alt="" aria-hidden="true"> USE BOTH THUMBS</p></div>
+</div>
+<footer class="footer"><span>ONE CUP. A FINAL SECRET.</span><span>SCULPT <i>×</i> CLAY</span><span class="footer-right">1 PLAYER <img class="cup-separator" src="assets/cup-separator.png" width="20" height="20" alt="" aria-hidden="true"> ARCADE MODE</span></footer>
+<div id="load-status" class="load-status" role="status">LOADING FIGHTER SPRITES…</div>
+</main>
+<dialog id="controls-dialog" aria-labelledby="controls-title">
+<button id="close-help" class="close-dialog" aria-label="Close controls">×</button>
+<h2 id="controls-title">CONTROLS</h2>
+<div class="keyboard-help">
+<div class="help-grid">
+<div><span>Move</span><span><kbd>A</kbd><kbd>D</kbd></span></div>
+<div><span>Jump</span><kbd>W</kbd></div>
+<div><span>Block</span><kbd>S</kbd></div>
+<div><span>Punch</span><kbd>J</kbd></div>
+<div><span>Kick</span><kbd>K</kbd></div>
+<div><span>Special</span><kbd>L</kbd></div>
+</div>
+<p class="help-alternative">Arrow keys work for movement too.</p>
+<p class="help-pause"><span>Pause</span><span><kbd>ESC</kbd> / <kbd>P</kbd></span></p>
+</div>
+<div class="touch-help"><div><strong>LEFT THUMB</strong><span>Move, jump &amp; block</span></div><div><strong>RIGHT THUMB</strong><span>Punch, kick &amp; special</span></div><p>Hold a button to repeat. Tap Ⅱ to pause.</p></div>
+<p class="help-tip">Special needs 40% energy. Win 2 rounds to take the match.</p>
+<button id="help-done" class="primary">GOT IT</button>
+</dialog>
+<canvas id="confetti" class="confetti hidden" aria-hidden="true"></canvas>
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="trophy" viewBox="0 0 64 64"><path d="M17 7h30v7h9v19h-7v7H39v7h-4v6h12v6H17v-6h12v-6h-4v-7H15v-7H8V14h9zm0 13h-3v10h3zm30 0v10h3V20z" fill="currentColor"/><path d="M23 13h7v18h-7z" fill="currentColor" opacity=".4"/></symbol></defs></svg>
+</body></html>

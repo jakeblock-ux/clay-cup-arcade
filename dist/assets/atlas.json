@@ -1,0 +1,3242 @@
+{
+  "generationMode": "built-in image_gen",
+  "requestedGrid": {
+    "columns": 4,
+    "rows": 3,
+    "width": 1536,
+    "height": 1536
+  },
+  "limitations": [
+    "Generated dimensions are 1254x1254 rather than 1536x1536.",
+    "All twelve poses are present in three rows, but columns are not uniform. Use explicit sourceRects, not equal grid slicing.",
+    "Some rectangles overlap. Clean display needs connected-component isolation: flood-fill from each frame alphaComponentSeed with four-neighbor connectivity and keep only alpha >24. Cache the isolated RGBA pixels on a per-frame canvas.",
+    "Semi-transparent fringe with alpha<=24 connects nearby poses; discarding this near-invisible fringe produces exactly twelve disconnected silhouettes.",
+    "Pose scales and feet baselines vary slightly. Use pivots and the fighter-wide standingHeight for rendering."
+  ],
+  "fighters": {
+    "ben": {
+      "file": "ben-sheet.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.6316,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            24,
+            34,
+            260,
+            395
+          ],
+          "pixelCount": 36056,
+          "alphaComponentSeed": [
+            157,
+            34
+          ],
+          "pivotAbsolute": [
+            141.5,
+            395
+          ],
+          "sourceRect": [
+            20,
+            30,
+            244,
+            369
+          ],
+          "pivot": [
+            121.5,
+            365
+          ],
+          "alphaComponentSeedLocal": [
+            137,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            348,
+            60,
+            579,
+            394
+          ],
+          "pixelCount": 33934,
+          "alphaComponentSeed": [
+            468,
+            60
+          ],
+          "pivotAbsolute": [
+            463.0,
+            394
+          ],
+          "sourceRect": [
+            344,
+            56,
+            239,
+            342
+          ],
+          "pivot": [
+            119.0,
+            338
+          ],
+          "alphaComponentSeedLocal": [
+            124,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            669,
+            27,
+            900,
+            394
+          ],
+          "pixelCount": 32100,
+          "alphaComponentSeed": [
+            819,
+            27
+          ],
+          "pivotAbsolute": [
+            792.0,
+            394
+          ],
+          "sourceRect": [
+            665,
+            23,
+            239,
+            375
+          ],
+          "pivot": [
+            127.0,
+            371
+          ],
+          "alphaComponentSeedLocal": [
+            154,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            988,
+            36,
+            1217,
+            393
+          ],
+          "pixelCount": 32484,
+          "alphaComponentSeed": [
+            1130,
+            36
+          ],
+          "pivotAbsolute": [
+            1109.0,
+            393
+          ],
+          "sourceRect": [
+            984,
+            32,
+            237,
+            365
+          ],
+          "pivot": [
+            125.0,
+            361
+          ],
+          "alphaComponentSeedLocal": [
+            146,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            23,
+            466,
+            302,
+            796
+          ],
+          "pixelCount": 34972,
+          "alphaComponentSeed": [
+            156,
+            466
+          ],
+          "pivotAbsolute": [
+            152.0,
+            796
+          ],
+          "sourceRect": [
+            19,
+            462,
+            287,
+            338
+          ],
+          "pivot": [
+            133.0,
+            334
+          ],
+          "alphaComponentSeedLocal": [
+            137,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            333,
+            453,
+            623,
+            796
+          ],
+          "pixelCount": 32586,
+          "alphaComponentSeed": [
+            409,
+            453
+          ],
+          "pivotAbsolute": [
+            417.5,
+            796
+          ],
+          "sourceRect": [
+            329,
+            449,
+            298,
+            351
+          ],
+          "pivot": [
+            88.5,
+            347
+          ],
+          "alphaComponentSeedLocal": [
+            80,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            631,
+            477,
+            982,
+            796
+          ],
+          "pixelCount": 41889,
+          "alphaComponentSeed": [
+            783,
+            477
+          ],
+          "pivotAbsolute": [
+            759.0,
+            796
+          ],
+          "sourceRect": [
+            627,
+            473,
+            359,
+            327
+          ],
+          "pivot": [
+            132.0,
+            323
+          ],
+          "alphaComponentSeedLocal": [
+            156,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            988,
+            477,
+            1232,
+            793
+          ],
+          "pixelCount": 32000,
+          "alphaComponentSeed": [
+            1128,
+            477
+          ],
+          "pivotAbsolute": [
+            1109.5,
+            793
+          ],
+          "sourceRect": [
+            984,
+            473,
+            252,
+            324
+          ],
+          "pivot": [
+            125.5,
+            320
+          ],
+          "alphaComponentSeedLocal": [
+            144,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            37,
+            880,
+            310,
+            1197
+          ],
+          "pixelCount": 35054,
+          "alphaComponentSeed": [
+            63,
+            880
+          ],
+          "pivotAbsolute": [
+            194.0,
+            1197
+          ],
+          "sourceRect": [
+            33,
+            876,
+            281,
+            325
+          ],
+          "pivot": [
+            161.0,
+            321
+          ],
+          "alphaComponentSeedLocal": [
+            30,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            355,
+            848,
+            575,
+            1118
+          ],
+          "pixelCount": 29734,
+          "alphaComponentSeed": [
+            504,
+            848
+          ],
+          "pivotAbsolute": [
+            416.0,
+            1118
+          ],
+          "sourceRect": [
+            351,
+            844,
+            228,
+            278
+          ],
+          "pivot": [
+            65.0,
+            274
+          ],
+          "alphaComponentSeedLocal": [
+            153,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            596,
+            1085,
+            992,
+            1190
+          ],
+          "pixelCount": 26422,
+          "alphaComponentSeed": [
+            813,
+            1085
+          ],
+          "pivotAbsolute": [
+            789.5,
+            1190
+          ],
+          "sourceRect": [
+            592,
+            1081,
+            404,
+            113
+          ],
+          "pivot": [
+            197.5,
+            109
+          ],
+          "alphaComponentSeedLocal": [
+            221,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            1009,
+            821,
+            1222,
+            1222
+          ],
+          "pixelCount": 37859,
+          "alphaComponentSeed": [
+            1036,
+            821
+          ],
+          "pivotAbsolute": [
+            1115.0,
+            1222
+          ],
+          "sourceRect": [
+            1005,
+            817,
+            221,
+            409
+          ],
+          "pivot": [
+            110.0,
+            405
+          ],
+          "alphaComponentSeedLocal": [
+            31,
+            4
+          ]
+        }
+      },
+      "standingHeight": 361,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left."
+    },
+    "sabrina": {
+      "file": "sabrina-sheet.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.5865,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            41,
+            31,
+            273,
+            402
+          ],
+          "pixelCount": 41608,
+          "alphaComponentSeed": [
+            144,
+            31
+          ],
+          "pivotAbsolute": [
+            156.5,
+            402
+          ],
+          "sourceRect": [
+            37,
+            27,
+            240,
+            379
+          ],
+          "pivot": [
+            119.5,
+            375
+          ],
+          "alphaComponentSeedLocal": [
+            107,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            343,
+            54,
+            589,
+            401
+          ],
+          "pixelCount": 40101,
+          "alphaComponentSeed": [
+            467,
+            54
+          ],
+          "pivotAbsolute": [
+            465.5,
+            401
+          ],
+          "sourceRect": [
+            339,
+            50,
+            254,
+            355
+          ],
+          "pivot": [
+            126.5,
+            351
+          ],
+          "alphaComponentSeedLocal": [
+            128,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            673,
+            28,
+            903,
+            402
+          ],
+          "pixelCount": 40503,
+          "alphaComponentSeed": [
+            783,
+            28
+          ],
+          "pivotAbsolute": [
+            792.5,
+            402
+          ],
+          "sourceRect": [
+            669,
+            24,
+            238,
+            382
+          ],
+          "pivot": [
+            123.5,
+            378
+          ],
+          "alphaComponentSeedLocal": [
+            114,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            980,
+            27,
+            1220,
+            402
+          ],
+          "pixelCount": 41849,
+          "alphaComponentSeed": [
+            1113,
+            27
+          ],
+          "pivotAbsolute": [
+            1103.5,
+            402
+          ],
+          "sourceRect": [
+            976,
+            23,
+            248,
+            383
+          ],
+          "pivot": [
+            127.5,
+            379
+          ],
+          "alphaComponentSeedLocal": [
+            137,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            25,
+            458,
+            323,
+            809
+          ],
+          "pixelCount": 42223,
+          "alphaComponentSeed": [
+            161,
+            458
+          ],
+          "pivotAbsolute": [
+            151.5,
+            809
+          ],
+          "sourceRect": [
+            21,
+            454,
+            306,
+            359
+          ],
+          "pivot": [
+            130.5,
+            355
+          ],
+          "alphaComponentSeedLocal": [
+            140,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            348,
+            448,
+            634,
+            805
+          ],
+          "pixelCount": 35645,
+          "alphaComponentSeed": [
+            429,
+            448
+          ],
+          "pivotAbsolute": [
+            449.5,
+            805
+          ],
+          "sourceRect": [
+            344,
+            444,
+            294,
+            365
+          ],
+          "pivot": [
+            105.5,
+            361
+          ],
+          "alphaComponentSeedLocal": [
+            85,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            635,
+            473,
+            996,
+            801
+          ],
+          "pixelCount": 49318,
+          "alphaComponentSeed": [
+            925,
+            473
+          ],
+          "pivotAbsolute": [
+            771.0,
+            801
+          ],
+          "sourceRect": [
+            631,
+            469,
+            369,
+            336
+          ],
+          "pivot": [
+            140.0,
+            332
+          ],
+          "alphaComponentSeedLocal": [
+            294,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            990,
+            475,
+            1218,
+            801
+          ],
+          "pixelCount": 35244,
+          "alphaComponentSeed": [
+            1129,
+            475
+          ],
+          "pivotAbsolute": [
+            1103.5,
+            801
+          ],
+          "sourceRect": [
+            986,
+            471,
+            236,
+            334
+          ],
+          "pivot": [
+            117.5,
+            330
+          ],
+          "alphaComponentSeedLocal": [
+            143,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            28,
+            892,
+            320,
+            1205
+          ],
+          "pixelCount": 42728,
+          "alphaComponentSeed": [
+            85,
+            892
+          ],
+          "pivotAbsolute": [
+            189.5,
+            1205
+          ],
+          "sourceRect": [
+            24,
+            888,
+            300,
+            321
+          ],
+          "pivot": [
+            165.5,
+            317
+          ],
+          "alphaComponentSeedLocal": [
+            61,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            378,
+            828,
+            572,
+            1100
+          ],
+          "pixelCount": 34062,
+          "alphaComponentSeed": [
+            418,
+            828
+          ],
+          "pivotAbsolute": [
+            495.5,
+            1100
+          ],
+          "sourceRect": [
+            374,
+            824,
+            202,
+            280
+          ],
+          "pivot": [
+            121.5,
+            276
+          ],
+          "alphaComponentSeedLocal": [
+            44,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            588,
+            1088,
+            973,
+            1189
+          ],
+          "pixelCount": 27238,
+          "alphaComponentSeed": [
+            821,
+            1088
+          ],
+          "pivotAbsolute": [
+            774.0,
+            1189
+          ],
+          "sourceRect": [
+            584,
+            1084,
+            393,
+            109
+          ],
+          "pivot": [
+            190.0,
+            105
+          ],
+          "alphaComponentSeedLocal": [
+            237,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            1007,
+            828,
+            1229,
+            1216
+          ],
+          "pixelCount": 40455,
+          "alphaComponentSeed": [
+            1052,
+            828
+          ],
+          "pivotAbsolute": [
+            1117.5,
+            1216
+          ],
+          "sourceRect": [
+            1003,
+            824,
+            230,
+            396
+          ],
+          "pivot": [
+            114.5,
+            392
+          ],
+          "alphaComponentSeedLocal": [
+            49,
+            4
+          ]
+        }
+      },
+      "standingHeight": 374,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left."
+    },
+    "avik": {
+      "file": "avik-sheet.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.5992,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            33,
+            28,
+            287,
+            404
+          ],
+          "pixelCount": 43309,
+          "alphaComponentSeed": [
+            172,
+            28
+          ],
+          "pivotAbsolute": [
+            159.5,
+            404
+          ],
+          "sourceRect": [
+            29,
+            24,
+            262,
+            384
+          ],
+          "pivot": [
+            130.5,
+            380
+          ],
+          "alphaComponentSeedLocal": [
+            143,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            381,
+            55,
+            601,
+            403
+          ],
+          "pixelCount": 39822,
+          "alphaComponentSeed": [
+            481,
+            55
+          ],
+          "pivotAbsolute": [
+            490.5,
+            403
+          ],
+          "sourceRect": [
+            377,
+            51,
+            228,
+            356
+          ],
+          "pivot": [
+            113.5,
+            352
+          ],
+          "alphaComponentSeedLocal": [
+            104,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            667,
+            32,
+            901,
+            404
+          ],
+          "pixelCount": 41980,
+          "alphaComponentSeed": [
+            813,
+            32
+          ],
+          "pivotAbsolute": [
+            785.5,
+            404
+          ],
+          "sourceRect": [
+            663,
+            28,
+            242,
+            380
+          ],
+          "pivot": [
+            122.5,
+            376
+          ],
+          "alphaComponentSeedLocal": [
+            150,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            980,
+            32,
+            1224,
+            404
+          ],
+          "pixelCount": 37385,
+          "alphaComponentSeed": [
+            1132,
+            32
+          ],
+          "pivotAbsolute": [
+            1097.0,
+            404
+          ],
+          "sourceRect": [
+            976,
+            28,
+            252,
+            380
+          ],
+          "pivot": [
+            121.0,
+            376
+          ],
+          "alphaComponentSeedLocal": [
+            156,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            21,
+            468,
+            324,
+            801
+          ],
+          "pixelCount": 42986,
+          "alphaComponentSeed": [
+            157,
+            468
+          ],
+          "pivotAbsolute": [
+            163.0,
+            801
+          ],
+          "sourceRect": [
+            17,
+            464,
+            311,
+            341
+          ],
+          "pivot": [
+            146.0,
+            337
+          ],
+          "alphaComponentSeedLocal": [
+            140,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            348,
+            450,
+            622,
+            808
+          ],
+          "pixelCount": 36994,
+          "alphaComponentSeed": [
+            416,
+            450
+          ],
+          "pivotAbsolute": [
+            456.0,
+            808
+          ],
+          "sourceRect": [
+            344,
+            446,
+            282,
+            366
+          ],
+          "pivot": [
+            112.0,
+            362
+          ],
+          "alphaComponentSeedLocal": [
+            72,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            599,
+            484,
+            976,
+            806
+          ],
+          "pixelCount": 50395,
+          "alphaComponentSeed": [
+            756,
+            484
+          ],
+          "pivotAbsolute": [
+            758.0,
+            806
+          ],
+          "sourceRect": [
+            595,
+            480,
+            385,
+            330
+          ],
+          "pivot": [
+            163.0,
+            326
+          ],
+          "alphaComponentSeedLocal": [
+            161,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            976,
+            472,
+            1229,
+            809
+          ],
+          "pixelCount": 39743,
+          "alphaComponentSeed": [
+            1111,
+            472
+          ],
+          "pivotAbsolute": [
+            1102.0,
+            809
+          ],
+          "sourceRect": [
+            972,
+            468,
+            261,
+            345
+          ],
+          "pivot": [
+            130.0,
+            341
+          ],
+          "alphaComponentSeedLocal": [
+            139,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            57,
+            879,
+            342,
+            1211
+          ],
+          "pixelCount": 42159,
+          "alphaComponentSeed": [
+            103,
+            879
+          ],
+          "pivotAbsolute": [
+            204.5,
+            1211
+          ],
+          "sourceRect": [
+            53,
+            875,
+            293,
+            340
+          ],
+          "pivot": [
+            151.5,
+            336
+          ],
+          "alphaComponentSeedLocal": [
+            50,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            377,
+            835,
+            579,
+            1089
+          ],
+          "pixelCount": 32247,
+          "alphaComponentSeed": [
+            513,
+            835
+          ],
+          "pivotAbsolute": [
+            461.0,
+            1089
+          ],
+          "sourceRect": [
+            373,
+            831,
+            210,
+            262
+          ],
+          "pivot": [
+            88.0,
+            258
+          ],
+          "alphaComponentSeedLocal": [
+            140,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            534,
+            1125,
+            963,
+            1215
+          ],
+          "pixelCount": 30953,
+          "alphaComponentSeed": [
+            713,
+            1125
+          ],
+          "pivotAbsolute": [
+            744.0,
+            1215
+          ],
+          "sourceRect": [
+            530,
+            1121,
+            437,
+            98
+          ],
+          "pivot": [
+            214.0,
+            94
+          ],
+          "alphaComponentSeedLocal": [
+            183,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            995,
+            840,
+            1224,
+            1227
+          ],
+          "pixelCount": 43542,
+          "alphaComponentSeed": [
+            1163,
+            840
+          ],
+          "pivotAbsolute": [
+            1109.0,
+            1227
+          ],
+          "sourceRect": [
+            991,
+            836,
+            237,
+            395
+          ],
+          "pivot": [
+            118.0,
+            391
+          ],
+          "alphaComponentSeedLocal": [
+            172,
+            4
+          ]
+        }
+      },
+      "standingHeight": 372,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left."
+    },
+    "leszek": {
+      "file": "leszek-sheet-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.6261,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            46,
+            33,
+            284,
+            402
+          ],
+          "pixelCount": 42762,
+          "alphaComponentSeed": [
+            159,
+            33
+          ],
+          "pivotAbsolute": [
+            164.5,
+            402
+          ],
+          "sourceRect": [
+            42,
+            29,
+            246,
+            377
+          ],
+          "pivot": [
+            122.5,
+            373
+          ],
+          "alphaComponentSeedLocal": [
+            117,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            360,
+            53,
+            595,
+            402
+          ],
+          "pixelCount": 40953,
+          "alphaComponentSeed": [
+            497,
+            53
+          ],
+          "pivotAbsolute": [
+            477.0,
+            402
+          ],
+          "sourceRect": [
+            356,
+            49,
+            243,
+            357
+          ],
+          "pivot": [
+            121.0,
+            353
+          ],
+          "alphaComponentSeedLocal": [
+            141,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            663,
+            33,
+            900,
+            402
+          ],
+          "pixelCount": 42462,
+          "alphaComponentSeed": [
+            813,
+            33
+          ],
+          "pivotAbsolute": [
+            786.0,
+            402
+          ],
+          "sourceRect": [
+            659,
+            29,
+            245,
+            377
+          ],
+          "pivot": [
+            127.0,
+            373
+          ],
+          "alphaComponentSeedLocal": [
+            154,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            969,
+            34,
+            1222,
+            402
+          ],
+          "pixelCount": 39782,
+          "alphaComponentSeed": [
+            1128,
+            34
+          ],
+          "pivotAbsolute": [
+            1094.5,
+            402
+          ],
+          "sourceRect": [
+            965,
+            30,
+            261,
+            376
+          ],
+          "pivot": [
+            129.5,
+            372
+          ],
+          "alphaComponentSeedLocal": [
+            163,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            18,
+            456,
+            324,
+            791
+          ],
+          "pixelCount": 41518,
+          "alphaComponentSeed": [
+            157,
+            456
+          ],
+          "pivotAbsolute": [
+            147.0,
+            791
+          ],
+          "sourceRect": [
+            14,
+            452,
+            314,
+            343
+          ],
+          "pivot": [
+            133.0,
+            339
+          ],
+          "alphaComponentSeedLocal": [
+            143,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            330,
+            451,
+            627,
+            790
+          ],
+          "pixelCount": 38001,
+          "alphaComponentSeed": [
+            395,
+            451
+          ],
+          "pivotAbsolute": [
+            421.5,
+            790
+          ],
+          "sourceRect": [
+            326,
+            447,
+            305,
+            347
+          ],
+          "pivot": [
+            95.5,
+            343
+          ],
+          "alphaComponentSeedLocal": [
+            69,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            629,
+            468,
+            1001,
+            791
+          ],
+          "pixelCount": 54234,
+          "alphaComponentSeed": [
+            761,
+            468
+          ],
+          "pivotAbsolute": [
+            769.5,
+            791
+          ],
+          "sourceRect": [
+            625,
+            464,
+            380,
+            331
+          ],
+          "pivot": [
+            144.5,
+            327
+          ],
+          "alphaComponentSeedLocal": [
+            136,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            975,
+            468,
+            1237,
+            792
+          ],
+          "pixelCount": 37482,
+          "alphaComponentSeed": [
+            1107,
+            468
+          ],
+          "pivotAbsolute": [
+            1105.5,
+            792
+          ],
+          "sourceRect": [
+            971,
+            464,
+            270,
+            332
+          ],
+          "pivot": [
+            134.5,
+            328
+          ],
+          "alphaComponentSeedLocal": [
+            136,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            65,
+            865,
+            308,
+            1205
+          ],
+          "pixelCount": 42532,
+          "alphaComponentSeed": [
+            108,
+            865
+          ],
+          "pivotAbsolute": [
+            185.5,
+            1205
+          ],
+          "sourceRect": [
+            61,
+            861,
+            251,
+            348
+          ],
+          "pivot": [
+            124.5,
+            344
+          ],
+          "alphaComponentSeedLocal": [
+            47,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            340,
+            815,
+            593,
+            1069
+          ],
+          "pixelCount": 32258,
+          "alphaComponentSeed": [
+            506,
+            815
+          ],
+          "pivotAbsolute": [
+            470.0,
+            1069
+          ],
+          "sourceRect": [
+            336,
+            811,
+            261,
+            262
+          ],
+          "pivot": [
+            134.0,
+            258
+          ],
+          "alphaComponentSeedLocal": [
+            170,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            532,
+            1108,
+            980,
+            1206
+          ],
+          "pixelCount": 32385,
+          "alphaComponentSeed": [
+            719,
+            1108
+          ],
+          "pivotAbsolute": [
+            755.0,
+            1206
+          ],
+          "sourceRect": [
+            528,
+            1104,
+            456,
+            106
+          ],
+          "pivot": [
+            227.0,
+            102
+          ],
+          "alphaComponentSeedLocal": [
+            191,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            1002,
+            813,
+            1232,
+            1208
+          ],
+          "pixelCount": 44766,
+          "alphaComponentSeed": [
+            1038,
+            813
+          ],
+          "pivotAbsolute": [
+            1116.5,
+            1208
+          ],
+          "sourceRect": [
+            998,
+            809,
+            238,
+            403
+          ],
+          "pivot": [
+            118.5,
+            399
+          ],
+          "alphaComponentSeedLocal": [
+            40,
+            4
+          ]
+        }
+      },
+      "standingHeight": 369,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left."
+    },
+    "kareem": {
+      "file": "kareem-sheet.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.5662,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            36,
+            83,
+            296,
+            415
+          ],
+          "pixelCount": 49530,
+          "alphaComponentSeed": [
+            144,
+            83
+          ],
+          "pivotAbsolute": [
+            161.5,
+            415
+          ],
+          "sourceRect": [
+            32,
+            79,
+            268,
+            340
+          ],
+          "pivot": [
+            129.5,
+            336
+          ],
+          "alphaComponentSeedLocal": [
+            112,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            355,
+            88,
+            600,
+            415
+          ],
+          "pixelCount": 47011,
+          "alphaComponentSeed": [
+            454,
+            88
+          ],
+          "pivotAbsolute": [
+            477.5,
+            415
+          ],
+          "sourceRect": [
+            351,
+            84,
+            253,
+            335
+          ],
+          "pivot": [
+            126.5,
+            331
+          ],
+          "alphaComponentSeedLocal": [
+            103,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            663,
+            103,
+            958,
+            406
+          ],
+          "pixelCount": 47743,
+          "alphaComponentSeed": [
+            822,
+            103
+          ],
+          "pivotAbsolute": [
+            779.0,
+            406
+          ],
+          "sourceRect": [
+            659,
+            99,
+            303,
+            311
+          ],
+          "pivot": [
+            120.0,
+            307
+          ],
+          "alphaComponentSeedLocal": [
+            163,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            983,
+            96,
+            1245,
+            407
+          ],
+          "pixelCount": 44323,
+          "alphaComponentSeed": [
+            1082,
+            96
+          ],
+          "pivotAbsolute": [
+            1112.5,
+            407
+          ],
+          "sourceRect": [
+            979,
+            92,
+            270,
+            319
+          ],
+          "pivot": [
+            133.5,
+            315
+          ],
+          "alphaComponentSeedLocal": [
+            103,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            29,
+            475,
+            332,
+            803
+          ],
+          "pixelCount": 52938,
+          "alphaComponentSeed": [
+            138,
+            475
+          ],
+          "pivotAbsolute": [
+            153.0,
+            803
+          ],
+          "sourceRect": [
+            25,
+            471,
+            311,
+            336
+          ],
+          "pivot": [
+            128.0,
+            332
+          ],
+          "alphaComponentSeedLocal": [
+            113,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            351,
+            478,
+            605,
+            793
+          ],
+          "pixelCount": 48716,
+          "alphaComponentSeed": [
+            454,
+            478
+          ],
+          "pivotAbsolute": [
+            484.0,
+            793
+          ],
+          "sourceRect": [
+            347,
+            474,
+            262,
+            323
+          ],
+          "pivot": [
+            137.0,
+            319
+          ],
+          "alphaComponentSeedLocal": [
+            107,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            662,
+            485,
+            964,
+            790
+          ],
+          "pixelCount": 52713,
+          "alphaComponentSeed": [
+            767,
+            485
+          ],
+          "pivotAbsolute": [
+            786.0,
+            790
+          ],
+          "sourceRect": [
+            658,
+            481,
+            310,
+            313
+          ],
+          "pivot": [
+            128.0,
+            309
+          ],
+          "alphaComponentSeedLocal": [
+            109,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            999,
+            494,
+            1241,
+            793
+          ],
+          "pixelCount": 43023,
+          "alphaComponentSeed": [
+            1111,
+            494
+          ],
+          "pivotAbsolute": [
+            1120.0,
+            793
+          ],
+          "sourceRect": [
+            995,
+            490,
+            250,
+            307
+          ],
+          "pivot": [
+            125.0,
+            303
+          ],
+          "alphaComponentSeedLocal": [
+            116,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            17,
+            895,
+            318,
+            1178
+          ],
+          "pixelCount": 51200,
+          "alphaComponentSeed": [
+            75,
+            895
+          ],
+          "pivotAbsolute": [
+            162.5,
+            1178
+          ],
+          "sourceRect": [
+            13,
+            891,
+            309,
+            291
+          ],
+          "pivot": [
+            149.5,
+            287
+          ],
+          "alphaComponentSeedLocal": [
+            62,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            323,
+            840,
+            632,
+            1151
+          ],
+          "pixelCount": 50924,
+          "alphaComponentSeed": [
+            472,
+            840
+          ],
+          "pivotAbsolute": [
+            492.0,
+            1151
+          ],
+          "sourceRect": [
+            319,
+            836,
+            317,
+            319
+          ],
+          "pivot": [
+            173.0,
+            315
+          ],
+          "alphaComponentSeedLocal": [
+            153,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            645,
+            983,
+            965,
+            1210
+          ],
+          "pixelCount": 38752,
+          "alphaComponentSeed": [
+            696,
+            983
+          ],
+          "pivotAbsolute": [
+            808.0,
+            1210
+          ],
+          "sourceRect": [
+            641,
+            979,
+            328,
+            235
+          ],
+          "pivot": [
+            167.0,
+            231
+          ],
+          "alphaComponentSeedLocal": [
+            55,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            1002,
+            840,
+            1239,
+            1203
+          ],
+          "pixelCount": 53402,
+          "alphaComponentSeed": [
+            1050,
+            840
+          ],
+          "pivotAbsolute": [
+            1120.5,
+            1203
+          ],
+          "sourceRect": [
+            998,
+            836,
+            245,
+            371
+          ],
+          "pivot": [
+            122.5,
+            367
+          ],
+          "alphaComponentSeedLocal": [
+            52,
+            4
+          ]
+        }
+      },
+      "standingHeight": 332,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left. Isolate alpha >24 with four-neighbor flood fill from each alphaComponentSeedLocal; retain original source pixels and discard other components. Kareem is seated cross-legged in every pose; standingHeight measures his seated idle silhouette. Add game-level hover offset above ground."
+    },
+    "varun": {
+      "file": "varun-sheet.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.5938,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            20,
+            42,
+            287,
+            426
+          ],
+          "pixelCount": 47532,
+          "alphaComponentSeed": [
+            146,
+            42
+          ],
+          "pivotAbsolute": [
+            153.5,
+            426
+          ],
+          "sourceRect": [
+            16,
+            38,
+            275,
+            392
+          ],
+          "pivot": [
+            137.5,
+            388
+          ],
+          "alphaComponentSeedLocal": [
+            130,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            344,
+            47,
+            593,
+            426
+          ],
+          "pixelCount": 45367,
+          "alphaComponentSeed": [
+            465,
+            47
+          ],
+          "pivotAbsolute": [
+            468.5,
+            426
+          ],
+          "sourceRect": [
+            340,
+            43,
+            257,
+            387
+          ],
+          "pivot": [
+            128.5,
+            383
+          ],
+          "alphaComponentSeedLocal": [
+            125,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            657,
+            42,
+            923,
+            426
+          ],
+          "pixelCount": 45655,
+          "alphaComponentSeed": [
+            814,
+            42
+          ],
+          "pivotAbsolute": [
+            792.5,
+            426
+          ],
+          "sourceRect": [
+            653,
+            38,
+            274,
+            392
+          ],
+          "pivot": [
+            139.5,
+            388
+          ],
+          "alphaComponentSeedLocal": [
+            161,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            979,
+            47,
+            1240,
+            426
+          ],
+          "pixelCount": 43073,
+          "alphaComponentSeed": [
+            1131,
+            47
+          ],
+          "pivotAbsolute": [
+            1116.5,
+            426
+          ],
+          "sourceRect": [
+            975,
+            43,
+            269,
+            387
+          ],
+          "pivot": [
+            141.5,
+            383
+          ],
+          "alphaComponentSeedLocal": [
+            156,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            12,
+            479,
+            335,
+            833
+          ],
+          "pixelCount": 48676,
+          "alphaComponentSeed": [
+            152,
+            479
+          ],
+          "pivotAbsolute": [
+            156.5,
+            833
+          ],
+          "sourceRect": [
+            8,
+            475,
+            331,
+            362
+          ],
+          "pivot": [
+            148.5,
+            358
+          ],
+          "alphaComponentSeedLocal": [
+            144,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            351,
+            478,
+            606,
+            831
+          ],
+          "pixelCount": 43418,
+          "alphaComponentSeed": [
+            466,
+            478
+          ],
+          "pivotAbsolute": [
+            478.5,
+            831
+          ],
+          "sourceRect": [
+            347,
+            474,
+            263,
+            361
+          ],
+          "pivot": [
+            131.5,
+            357
+          ],
+          "alphaComponentSeedLocal": [
+            119,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            634,
+            481,
+            993,
+            830
+          ],
+          "pixelCount": 53423,
+          "alphaComponentSeed": [
+            773,
+            481
+          ],
+          "pivotAbsolute": [
+            774.0,
+            830
+          ],
+          "sourceRect": [
+            630,
+            477,
+            367,
+            357
+          ],
+          "pivot": [
+            144.0,
+            353
+          ],
+          "alphaComponentSeedLocal": [
+            143,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            978,
+            481,
+            1240,
+            830
+          ],
+          "pixelCount": 42135,
+          "alphaComponentSeed": [
+            1127,
+            481
+          ],
+          "pivotAbsolute": [
+            1109.0,
+            830
+          ],
+          "sourceRect": [
+            974,
+            477,
+            270,
+            357
+          ],
+          "pivot": [
+            135.0,
+            353
+          ],
+          "alphaComponentSeedLocal": [
+            153,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            39,
+            895,
+            326,
+            1228
+          ],
+          "pixelCount": 46127,
+          "alphaComponentSeed": [
+            75,
+            895
+          ],
+          "pivotAbsolute": [
+            193.5,
+            1228
+          ],
+          "sourceRect": [
+            35,
+            891,
+            295,
+            341
+          ],
+          "pivot": [
+            158.5,
+            337
+          ],
+          "alphaComponentSeedLocal": [
+            40,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            369,
+            837,
+            574,
+            1126
+          ],
+          "pixelCount": 34552,
+          "alphaComponentSeed": [
+            490,
+            837
+          ],
+          "pivotAbsolute": [
+            454.0,
+            1126
+          ],
+          "sourceRect": [
+            365,
+            833,
+            213,
+            297
+          ],
+          "pivot": [
+            89.0,
+            293
+          ],
+          "alphaComponentSeedLocal": [
+            125,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            600,
+            1109,
+            1010,
+            1215
+          ],
+          "pixelCount": 30507,
+          "alphaComponentSeed": [
+            701,
+            1109
+          ],
+          "pivotAbsolute": [
+            807.5,
+            1215
+          ],
+          "sourceRect": [
+            596,
+            1105,
+            418,
+            114
+          ],
+          "pivot": [
+            211.5,
+            110
+          ],
+          "alphaComponentSeedLocal": [
+            105,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            1028,
+            850,
+            1241,
+            1234
+          ],
+          "pixelCount": 37155,
+          "alphaComponentSeed": [
+            1076,
+            850
+          ],
+          "pivotAbsolute": [
+            1134.5,
+            1234
+          ],
+          "sourceRect": [
+            1024,
+            846,
+            221,
+            392
+          ],
+          "pivot": [
+            110.5,
+            388
+          ],
+          "alphaComponentSeedLocal": [
+            52,
+            4
+          ]
+        }
+      },
+      "standingHeight": 384,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left. Isolate alpha >24 with four-neighbor flood fill from each alphaComponentSeedLocal; retain original source pixels and discard other components."
+    },
+    "owen": {
+      "file": "owen-sheet.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.6534,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            42,
+            38,
+            275,
+            410
+          ],
+          "pixelCount": 39068,
+          "alphaComponentSeed": [
+            166,
+            38
+          ],
+          "pivotAbsolute": [
+            158.0,
+            410
+          ],
+          "sourceRect": [
+            38,
+            34,
+            241,
+            380
+          ],
+          "pivot": [
+            120.0,
+            376
+          ],
+          "alphaComponentSeedLocal": [
+            128,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            342,
+            60,
+            601,
+            410
+          ],
+          "pixelCount": 39717,
+          "alphaComponentSeed": [
+            498,
+            60
+          ],
+          "pivotAbsolute": [
+            471.0,
+            410
+          ],
+          "sourceRect": [
+            338,
+            56,
+            267,
+            358
+          ],
+          "pivot": [
+            133.0,
+            354
+          ],
+          "alphaComponentSeedLocal": [
+            160,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            670,
+            40,
+            919,
+            410
+          ],
+          "pixelCount": 38396,
+          "alphaComponentSeed": [
+            798,
+            40
+          ],
+          "pivotAbsolute": [
+            794.5,
+            410
+          ],
+          "sourceRect": [
+            666,
+            36,
+            257,
+            378
+          ],
+          "pivot": [
+            128.5,
+            374
+          ],
+          "alphaComponentSeedLocal": [
+            132,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            975,
+            40,
+            1235,
+            409
+          ],
+          "pixelCount": 37201,
+          "alphaComponentSeed": [
+            1109,
+            40
+          ],
+          "pivotAbsolute": [
+            1107.0,
+            409
+          ],
+          "sourceRect": [
+            971,
+            36,
+            268,
+            377
+          ],
+          "pivot": [
+            136.0,
+            373
+          ],
+          "alphaComponentSeedLocal": [
+            138,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            26,
+            463,
+            337,
+            810
+          ],
+          "pixelCount": 42236,
+          "alphaComponentSeed": [
+            183,
+            463
+          ],
+          "pivotAbsolute": [
+            158.5,
+            810
+          ],
+          "sourceRect": [
+            22,
+            459,
+            319,
+            355
+          ],
+          "pivot": [
+            136.5,
+            351
+          ],
+          "alphaComponentSeedLocal": [
+            161,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            368,
+            457,
+            652,
+            808
+          ],
+          "pixelCount": 35956,
+          "alphaComponentSeed": [
+            436,
+            457
+          ],
+          "pivotAbsolute": [
+            451.0,
+            808
+          ],
+          "sourceRect": [
+            364,
+            453,
+            292,
+            359
+          ],
+          "pivot": [
+            87.0,
+            355
+          ],
+          "alphaComponentSeedLocal": [
+            72,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            595,
+            491,
+            1053,
+            803
+          ],
+          "pixelCount": 41117,
+          "alphaComponentSeed": [
+            780,
+            491
+          ],
+          "pivotAbsolute": [
+            759.5,
+            803
+          ],
+          "sourceRect": [
+            591,
+            487,
+            466,
+            320
+          ],
+          "pivot": [
+            168.5,
+            316
+          ],
+          "alphaComponentSeedLocal": [
+            189,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            995,
+            480,
+            1233,
+            809
+          ],
+          "pixelCount": 35434,
+          "alphaComponentSeed": [
+            1150,
+            480
+          ],
+          "pivotAbsolute": [
+            1113.5,
+            809
+          ],
+          "sourceRect": [
+            991,
+            476,
+            246,
+            337
+          ],
+          "pivot": [
+            122.5,
+            333
+          ],
+          "alphaComponentSeedLocal": [
+            159,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            36,
+            879,
+            316,
+            1210
+          ],
+          "pixelCount": 42530,
+          "alphaComponentSeed": [
+            83,
+            879
+          ],
+          "pivotAbsolute": [
+            183.0,
+            1210
+          ],
+          "sourceRect": [
+            32,
+            875,
+            288,
+            339
+          ],
+          "pivot": [
+            151.0,
+            335
+          ],
+          "alphaComponentSeedLocal": [
+            51,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            380,
+            834,
+            576,
+            1110
+          ],
+          "pixelCount": 33764,
+          "alphaComponentSeed": [
+            479,
+            834
+          ],
+          "pivotAbsolute": [
+            456.5,
+            1110
+          ],
+          "sourceRect": [
+            376,
+            830,
+            204,
+            284
+          ],
+          "pivot": [
+            80.5,
+            280
+          ],
+          "alphaComponentSeedLocal": [
+            103,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            580,
+            1111,
+            986,
+            1207
+          ],
+          "pixelCount": 30205,
+          "alphaComponentSeed": [
+            762,
+            1111
+          ],
+          "pivotAbsolute": [
+            781.5,
+            1207
+          ],
+          "sourceRect": [
+            576,
+            1107,
+            414,
+            104
+          ],
+          "pivot": [
+            205.5,
+            100
+          ],
+          "alphaComponentSeedLocal": [
+            186,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            1019,
+            818,
+            1241,
+            1229
+          ],
+          "pixelCount": 37071,
+          "alphaComponentSeed": [
+            1080,
+            818
+          ],
+          "pivotAbsolute": [
+            1129.5,
+            1229
+          ],
+          "sourceRect": [
+            1015,
+            814,
+            230,
+            419
+          ],
+          "pivot": [
+            114.5,
+            415
+          ],
+          "alphaComponentSeedLocal": [
+            65,
+            4
+          ]
+        }
+      },
+      "standingHeight": 372,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left."
+    },
+    "munnawar": {
+      "file": "munnawar-sheet.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "nominalGrid": {
+        "columns": 4,
+        "rows": 3
+      },
+      "alphaThreshold": 24,
+      "componentConnectivity": 4,
+      "transparentFraction": 0.6613,
+      "frameOrder": [
+        "idleA",
+        "idleB",
+        "walkA",
+        "walkB",
+        "punch",
+        "kick",
+        "special",
+        "block",
+        "hit",
+        "jump",
+        "ko",
+        "victory"
+      ],
+      "frames": {
+        "idleA": {
+          "bounds": [
+            38,
+            43,
+            266,
+            412
+          ],
+          "pixelCount": 39438,
+          "alphaComponentSeed": [
+            150,
+            43
+          ],
+          "pivotAbsolute": [
+            151.5,
+            412
+          ],
+          "sourceRect": [
+            34,
+            39,
+            236,
+            377
+          ],
+          "pivot": [
+            117.5,
+            373
+          ],
+          "alphaComponentSeedLocal": [
+            116,
+            4
+          ]
+        },
+        "idleB": {
+          "bounds": [
+            346,
+            48,
+            584,
+            411
+          ],
+          "pixelCount": 37317,
+          "alphaComponentSeed": [
+            452,
+            48
+          ],
+          "pivotAbsolute": [
+            464.5,
+            411
+          ],
+          "sourceRect": [
+            342,
+            44,
+            246,
+            371
+          ],
+          "pivot": [
+            122.5,
+            367
+          ],
+          "alphaComponentSeedLocal": [
+            110,
+            4
+          ]
+        },
+        "walkA": {
+          "bounds": [
+            673,
+            49,
+            919,
+            413
+          ],
+          "pixelCount": 37113,
+          "alphaComponentSeed": [
+            799,
+            49
+          ],
+          "pivotAbsolute": [
+            796.0,
+            413
+          ],
+          "sourceRect": [
+            669,
+            45,
+            254,
+            372
+          ],
+          "pivot": [
+            127.0,
+            368
+          ],
+          "alphaComponentSeedLocal": [
+            130,
+            4
+          ]
+        },
+        "walkB": {
+          "bounds": [
+            989,
+            48,
+            1240,
+            412
+          ],
+          "pixelCount": 35649,
+          "alphaComponentSeed": [
+            1115,
+            48
+          ],
+          "pivotAbsolute": [
+            1117.0,
+            412
+          ],
+          "sourceRect": [
+            985,
+            44,
+            259,
+            372
+          ],
+          "pivot": [
+            132.0,
+            368
+          ],
+          "alphaComponentSeedLocal": [
+            130,
+            4
+          ]
+        },
+        "punch": {
+          "bounds": [
+            26,
+            462,
+            331,
+            806
+          ],
+          "pixelCount": 39393,
+          "alphaComponentSeed": [
+            148,
+            462
+          ],
+          "pivotAbsolute": [
+            155.5,
+            806
+          ],
+          "sourceRect": [
+            22,
+            458,
+            313,
+            352
+          ],
+          "pivot": [
+            133.5,
+            348
+          ],
+          "alphaComponentSeedLocal": [
+            126,
+            4
+          ]
+        },
+        "kick": {
+          "bounds": [
+            347,
+            457,
+            633,
+            808
+          ],
+          "pixelCount": 35482,
+          "alphaComponentSeed": [
+            613,
+            457
+          ],
+          "pivotAbsolute": [
+            435.5,
+            808
+          ],
+          "sourceRect": [
+            343,
+            453,
+            294,
+            359
+          ],
+          "pivot": [
+            92.5,
+            355
+          ],
+          "alphaComponentSeedLocal": [
+            270,
+            4
+          ]
+        },
+        "special": {
+          "bounds": [
+            626,
+            490,
+            1048,
+            807
+          ],
+          "pixelCount": 38371,
+          "alphaComponentSeed": [
+            834,
+            490
+          ],
+          "pivotAbsolute": [
+            782.5,
+            807
+          ],
+          "sourceRect": [
+            622,
+            486,
+            430,
+            325
+          ],
+          "pivot": [
+            160.5,
+            321
+          ],
+          "alphaComponentSeedLocal": [
+            212,
+            4
+          ]
+        },
+        "block": {
+          "bounds": [
+            998,
+            486,
+            1237,
+            807
+          ],
+          "pixelCount": 34388,
+          "alphaComponentSeed": [
+            1137,
+            486
+          ],
+          "pivotAbsolute": [
+            1117.0,
+            807
+          ],
+          "sourceRect": [
+            994,
+            482,
+            247,
+            329
+          ],
+          "pivot": [
+            123.0,
+            325
+          ],
+          "alphaComponentSeedLocal": [
+            143,
+            4
+          ]
+        },
+        "hit": {
+          "bounds": [
+            52,
+            902,
+            307,
+            1222
+          ],
+          "pixelCount": 38547,
+          "alphaComponentSeed": [
+            83,
+            902
+          ],
+          "pivotAbsolute": [
+            186.5,
+            1222
+          ],
+          "sourceRect": [
+            48,
+            898,
+            263,
+            328
+          ],
+          "pivot": [
+            138.5,
+            324
+          ],
+          "alphaComponentSeedLocal": [
+            35,
+            4
+          ]
+        },
+        "jump": {
+          "bounds": [
+            380,
+            840,
+            572,
+            1103
+          ],
+          "pixelCount": 28267,
+          "alphaComponentSeed": [
+            487,
+            840
+          ],
+          "pivotAbsolute": [
+            495.0,
+            1103
+          ],
+          "sourceRect": [
+            376,
+            836,
+            200,
+            271
+          ],
+          "pivot": [
+            119.0,
+            267
+          ],
+          "alphaComponentSeedLocal": [
+            111,
+            4
+          ]
+        },
+        "ko": {
+          "bounds": [
+            594,
+            1116,
+            983,
+            1211
+          ],
+          "pixelCount": 28025,
+          "alphaComponentSeed": [
+            726,
+            1116
+          ],
+          "pivotAbsolute": [
+            783.5,
+            1211
+          ],
+          "sourceRect": [
+            590,
+            1112,
+            397,
+            103
+          ],
+          "pivot": [
+            193.5,
+            99
+          ],
+          "alphaComponentSeedLocal": [
+            136,
+            4
+          ]
+        },
+        "victory": {
+          "bounds": [
+            1015,
+            810,
+            1239,
+            1229
+          ],
+          "pixelCount": 34672,
+          "alphaComponentSeed": [
+            1102,
+            810
+          ],
+          "pivotAbsolute": [
+            1126.5,
+            1229
+          ],
+          "sourceRect": [
+            1011,
+            806,
+            232,
+            427
+          ],
+          "pivot": [
+            115.5,
+            423
+          ],
+          "alphaComponentSeedLocal": [
+            91,
+            4
+          ]
+        }
+      },
+      "standingHeight": 369,
+      "renderingNote": "Use the same scale = desiredStandingHeight / standingHeight for every frame. Draw each cached isolated frame at (fighterX - pivot[0]*scale, groundY - jumpOffset - pivot[1]*scale). Mirror the frame canvas horizontally around fighterX when facing left."
+    }
+  }
+}
